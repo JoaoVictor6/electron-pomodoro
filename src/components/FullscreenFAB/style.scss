@@ -1,0 +1,21 @@
+.fullscreen__fab {
+  position: absolute;
+  left: 16px;
+  top: 8px;
+  border-style: none;
+  background: transparent;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 4px 6px;
+  transition: all .2s;
+
+  svg {
+    width: 18px;
+  }
+
+  &:hover {
+    background: rgba($color: #949494, $alpha: 0.2);
+    border-radius: 100%;
+  }
+}

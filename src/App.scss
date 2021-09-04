@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #1c1e21;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.timer-output {
+  font-size: 264px;
+  font-weight: 600;
+}
+
+.timer-controller {
+  border-style: none;
+  background: transparent;
+  color: #fff;
+  width: 64px;
+}
