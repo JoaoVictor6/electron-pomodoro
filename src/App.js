@@ -3,13 +3,16 @@ import './App.scss';
 import { Pause } from './assets/icons/pause';
 import Play from './assets/icons/play';
 import FullscreenFAB from './components/FullscreenFAB';
+import ProgressBar from './components/ProgressBar';
 import notify from './utils/notify';
 
+const tempoTotal = 120
 function App() {
-  const [ minute, setMinute ] = useState(0)
-  const [ seconds, setSeconds ] = useState(30)
+  const [ minute, setMinute ] = useState(2)
+  const [ seconds, setSeconds ] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
-
+  const [percent, setPercent] = useState(0)
+  
   useEffect(() => {
     function timer(){
       if(isPaused) return
@@ -26,6 +29,11 @@ function App() {
       // Notify("Tempo acabou", "testestes")
       notify('Tempo acabou', 'Hora do descando!')
     }
+
+    const totalInSeconds = seconds + (minute*60)
+
+    setPercent((totalInSeconds * 100 / tempoTotal))
+
     const interval = setInterval(timer, 1000)
 
     return () => clearInterval(interval)
@@ -34,7 +42,7 @@ function App() {
   const handlePauseEvent = () => {
     setIsPaused(!isPaused)
   }
-
+  
   return (
     <div className="App">
       <FullscreenFAB />
@@ -48,6 +56,7 @@ function App() {
           {isPaused ? <Play /> : <Pause />}
         </button>
       </header>
+      <ProgressBar percentValue={percent}/>
     </div>
   );
 }
