@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import './style.scss'
-import Minimize from './minimize'
-import Maximize from './maximize'
+import { 
+  AiOutlineFullscreenExit as Minimize,
+  AiOutlineFullscreen as Maximize
+} from 'react-icons/ai'
 
 export default function FullscreenFAB(){
   const [isFullscreen, setIsFullscreen] = useState(false)

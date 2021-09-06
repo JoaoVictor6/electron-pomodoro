@@ -1,9 +1,9 @@
-.fullscreen__fab {
+.menu-fab {
   border-style: none;
   background: transparent;
   color: #fff;
-  align-items: center;
   transition: all .2s;
+  cursor: pointer;
 
   &:hover {
     background: rgba($color: #949494, $alpha: 0.2);
@@ -13,5 +13,17 @@
   svg {
     width: 24px;
     height: 24px;
+  }
+
+  padding: 4px 8px;
+
+  & > div {
+    margin-top: 8px;
+    position: absolute;
+
+    right: 18px;
+    background: rgba($color: #ffffff, $alpha: 0.2);
+    padding: 16px;
+    border-radius: 5px;
   }
 }
