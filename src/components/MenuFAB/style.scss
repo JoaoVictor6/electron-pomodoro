@@ -18,12 +18,29 @@
   padding: 4px 8px;
 
   & > div {
-    margin-top: 8px;
+    margin: auto 0;
+    top: 0;
+    right: 0;
     position: absolute;
-
-    right: 18px;
-    background: rgba($color: #ffffff, $alpha: 0.2);
+    height:100vh;
+    background: rgba($color: #949494, $alpha: 0.1);
     padding: 16px;
-    border-radius: 5px;
+
+    width: 50%;
+    animation: surgir .05s;
+
+    box-shadow: 0 8px 32px 0 rgba($color: #949494, $alpha: 0.1);;
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+  }
+}
+
+@keyframes surgir {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(auto);
   }
 }
