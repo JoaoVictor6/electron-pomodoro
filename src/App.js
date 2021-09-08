@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
+import { MdPlayArrow as Play, MdPause as Pause } from 'react-icons/md'
+
 import './App.scss';
-import { Pause } from './assets/icons/pause';
-import Play from './assets/icons/play';
 import ProgressBar from './components/ProgressBar';
 import TopBar from './components/TopBar';
 import notify from './utils/notify';
@@ -53,7 +53,11 @@ function App() {
           {seconds.toString().length < 2 ? `0${seconds}` : seconds}
         </div>
         <button onClick={handlePauseEvent} className="timer-controller">
-          {isPaused ? <Play /> : <Pause />}
+          {isPaused ? (
+            <>Play <Play /></>
+          ) : (
+            <>Pause <Pause /></>
+          )}
         </button>
       </header>
       <ProgressBar percentValue={100}/>
