@@ -23,13 +23,13 @@
     right: 0;
     position: absolute;
     height:100vh;
-    background: rgba($color: #949494, $alpha: 0.1);
+    background: rgba($color: #383838, $alpha: 0.1);
     padding: 16px;
 
     width: 50%;
     animation: surgir .05s;
 
-    box-shadow: 0 8px 32px 0 rgba($color: #949494, $alpha: 0.1);;
+    box-shadow: 0 8px 32px 0 rgba($color: #383838, $alpha: 0.1);;
     backdrop-filter: blur( 10px );
     -webkit-backdrop-filter: blur( 20px );
     border-radius: 10px;
