@@ -9,13 +9,13 @@ function App() {
   const {
     isPaused, 
     setIsPaused,
-    percentTimer
+    percentTimer,
+    isBreakTime,
   } = useTimer()
 
   const handlePauseEvent = () => {
     setIsPaused(!isPaused)
   }
-  console.log(percentTimer)
   return (
     <div className="App">
       <TopBar />
@@ -29,7 +29,7 @@ function App() {
           )}
         </button>
       </header>
-      <ProgressBar percentValue={percentTimer}/>
+      <ProgressBar percentValue={percentTimer} breakTime={isBreakTime}/>
     </div>
   );
 }

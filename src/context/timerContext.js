@@ -4,8 +4,10 @@ const Context = createContext()
 
 export function TimerProvider({children}){
   const [ minute, setMinute ] = useState(1)
-  const [ currentMinute, setCurrentMinute ] = useState(minute)
   const [ seconds, setSeconds ] = useState(0)
+  const [ breakTime, setBreakTime ] = useState(2)
+  const [ isBreakTime, setIsBreakTime ] = useState(false)
+  const [ currentMinute, setCurrentMinute ] = useState(minute)
   const [isPaused, setIsPaused] = useState(false)
   const [percentTimer, setPercent ] = useState(100)
   
@@ -20,7 +22,11 @@ export function TimerProvider({children}){
       currentMinute, 
       setCurrentMinute,
       percentTimer, 
-      setPercent
+      setPercent,
+      breakTime, 
+      setBreakTime,
+      isBreakTime, 
+      setIsBreakTime
     }}>
       {children}
     </Context.Provider>

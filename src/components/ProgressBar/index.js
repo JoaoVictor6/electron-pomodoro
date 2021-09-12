@@ -1,16 +1,19 @@
-import propTypes from 'prop-types'
+import useTimer from '../../context/timerContext'
 import './style.scss'
 
 function ProgressBar({ percentValue }){
+  const {
+    isBreakTime
+  } = useTimer()
   return(
-    <div className="progress-bar" style={{
-      width: `${percentValue}%`
-    }}></div>
+    <div 
+      className={`progress-bar ${isBreakTime ? 'break-time' : false}`} 
+      style={{
+        width: `${percentValue}%`
+      }}
+    >
+    </div>
   )
-}
-
-ProgressBar.propTypes = {
-  percentValue: propTypes.number.isRequired
 }
 
 export default ProgressBar
